@@ -1,0 +1,29 @@
+July 20-23rd
+
+1) Overview: Stochastic gravitational-wave background searches and sources
+
+Provide an overview of searches for stochastic GW backgrounds across the
+electromagnetic spectrum.  Introduce different types of stochastic backgrounds,
+different types of detectors used to detect it, and give current status of
+those searches.
+
+2) Bayesian inference / data analysis
+
+Compare and contrast Bayesian and frequentist statistics.  Define relevant
+quantities such as frequentist 90% CL upper limits, hypothesis testing,
+Bayesian credible intervals and model selection.
+
+3) Cross-correlation methods and overlap reduction functions
+
+Introduce the concept of cross corelation using data from multiple detectors as
+a robust method to search for stochastic GWs.  Define the overlap reduction
+function as the correlation coefficient relating GW strain power and the
+cross-correlated power in a pair of detectors.  Give examples for ground-based
+interferometers and pulsar timing arrays.
+
+4) A worked example: Pulsar timing array searches for an isotropic GWB
+
+Apply concepts from the previous lectures to analyze simulated data relevant
+for pulsar timing array searches for GW backgrounds.  Describe an acoustic
+analogue of pulsar timing arrays using metronomes and a microphone.
+
