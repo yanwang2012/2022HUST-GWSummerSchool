@@ -1,17 +1,17 @@
 July 20-23rd
 
-1) Overview: Stochastic gravitational-wave background searches and sources
+1) Frequentist statistics and Bayesian inference 
 
-Provide an overview of searches for stochastic GW backgrounds across the
-electromagnetic spectrum.  Introduce different types of stochastic backgrounds,
-different types of detectors used to detect it, and give current status of
-those searches.
+Compare and contrast frequentist statistics and Bayesian inference.  Define
+relevant quantities such as frequentist 90% confidence intervals, hypothesis
+testing, Bayesian credible intervals and model selection.
 
-2) Bayesian inference / data analysis
+2) Overview of stochastic GW background searches and sources
 
-Compare and contrast Bayesian and frequentist statistics.  Define relevant
-quantities such as frequentist 90% CL upper limits, hypothesis testing,
-Bayesian credible intervals and model selection.
+Provide an overview of searches for stochastic GW backgrounds across the GW
+spectrum.  Introduce different types of stochastic backgrounds, different types
+of detectors used to detect these backgrounds, and give current status of those
+searches.
 
 3) Cross-correlation methods and overlap reduction functions
 
@@ -21,9 +21,11 @@ function as the correlation coefficient relating GW strain power and the
 cross-correlated power in a pair of detectors.  Give examples for ground-based
 interferometers and pulsar timing arrays.
 
-4) A worked example: Pulsar timing array searches for an isotropic GWB
+4) Case study: The NANOGrav 12.5-year analysis for an isotropic stochastic
+GW background
 
-Apply concepts from the previous lectures to analyze simulated data relevant
-for pulsar timing array searches for GW backgrounds.  Describe an acoustic
-analogue of pulsar timing arrays using metronomes and a microphone.
+Apply concepts from the previous lectures to discuss pulsar timing array
+searches for GW backgrounds, focusing on the recent NANOGrav 12.5-yr analysis
+for an isotropic GWB produced by inspiraling super-massive black-hole binaries
+in the centers of merging galaxies.
 
