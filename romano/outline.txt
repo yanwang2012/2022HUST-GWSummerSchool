@@ -1,0 +1,31 @@
+July 20-23rd
+
+1) Frequentist statistics and Bayesian inference 
+
+Compare and contrast frequentist statistics and Bayesian inference.  Define
+relevant quantities such as frequentist 90% confidence intervals, hypothesis
+testing, Bayesian credible intervals and model selection.
+
+2) Overview of stochastic GW background searches and sources
+
+Provide an overview of searches for stochastic GW backgrounds across the GW
+spectrum.  Introduce different types of stochastic backgrounds, different types
+of detectors used to detect these backgrounds, and give current status of those
+searches.
+
+3) Cross-correlation methods and overlap reduction functions
+
+Introduce the concept of cross corelation using data from multiple detectors as
+a robust method to search for stochastic GWs.  Define the overlap reduction
+function as the correlation coefficient relating GW strain power and the
+cross-correlated power in a pair of detectors.  Give examples for ground-based
+interferometers and pulsar timing arrays.
+
+4) Case study: The NANOGrav 12.5-year analysis for an isotropic stochastic
+GW background
+
+Apply concepts from the previous lectures to discuss pulsar timing array
+searches for GW backgrounds, focusing on the recent NANOGrav 12.5-yr analysis
+for an isotropic GWB produced by inspiraling super-massive black-hole binaries
+in the centers of merging galaxies.
+
