@@ -88,9 +88,11 @@ constant signal in white noise}
 {2 Comparing frequentist and Bayesian analyses for a
 constant signal in white noise}
 
-Consider a constant amplitude signal $a={\rm const}$ in 
-white Gaussian noise with variance 
-$\sigma^2$ described by the likelihood functions
+Consider a constant amplitude signal $a={\rm const}$ in $N$
+samples of white Gaussian noise with fixed known variance 
+$\sigma^2$.
+The likelihood functions describing the noise-only and
+signal+noise models are
 %
 \be
 p(d|{\cal M}_0) = \left(\frac{1}{\sqrt{2\pi}\sigma}\right)^N
@@ -104,27 +106,31 @@ p(d|a,{\cal M}_1) = \left(\frac{1}{\sqrt{2\pi}\sigma}\right)^N
 \exp\left[-\frac{1}{2\sigma^2}\sum_{i=1}^N(d_i-a)^2\right]
 \ee
 %
-For the Bayesian analyses, use the following prior for $a$:
+respectively.
+Asumme for the Bayesian analyses that the amplitude $a$ of 
+the signal is described by prior distribution
 %
 \be
 p(a|{\cal M}_1) = \frac{1}{a_{\rm max}}
 \ee
+%
+This exercise asks you to perform both frequentist and 
+Bayesian analyses for the above signal and noise models, 
+calculating various analytic expressions (see below) 
+and doing numerical calculation for simulated data.
 
-Perform both frequentist and Bayesian analyses for the
-above signal and noise models, doing both analytic and
-numerical calculations of relevant quantities.
+For the analytic calculations:
+%
+\ben
 
-\be
-N=100\,,\quad \sigma=1\,,\quad  
-0\le a \le a_{\rm max}\,, \quad a_0 =\text{true value}
-\ee
-
+\item
 Show that the ML estimator of $a$ is given by
 %
 \be
 \hat a\equiv a_{\rm ML}(d)=\frac{1}{N}\sum_{i=1}^Nd_i\equiv\bar d
 \ee
 
+\item
 Derive the following identity
 %
 \be
@@ -134,6 +140,9 @@ Derive the following identity
 %
 expressing the argument of the exponential in terms of $\hat a$.
 
+\item
+Show that the likelihood function $p(d|a,{\cal M}_1)$ can be
+rewritten in terms of $\hat a$ as:
 
 \be
 p(d|a,{\cal M}_1)=\left(\frac{1}{\sqrt{2\pi}\sigma}\right)^N
@@ -141,7 +150,8 @@ p(d|a,{\cal M}_1)=\left(\frac{1}{\sqrt{2\pi}\sigma}\right)^N
 {\rm exp}\left[-\frac{(a-\hat a)^2}{2\sigma^2_{\hat a}}\right]
 \ee
 %
-Evidence
+
+\i Show that the evidence is given by
 %
 \be
 p(d|{\cal M}_1)=
@@ -153,7 +163,9 @@ p(d|{\cal M}_1)=
 {2a_{\rm max}\left(\sqrt{2\pi}\sigma\right)^{N-1}\sqrt{N}}
 \ee
 %
-Posterior:
+
+\item
+Show that the posterior distribution for $a$ is given by
 %
 \be
 p(a|d,{\cal M}_1)=\frac{1}{\sqrt{2\pi}\sigma_{\hat a}}{\rm exp}\left[-\frac{(a-\hat a)^2}{2\sigma^2_{\hat a}}\right]
@@ -163,44 +175,51 @@ p(a|d,{\cal M}_1)=\frac{1}{\sqrt{2\pi}\sigma_{\hat a}}{\rm exp}\left[-\frac{(a-\
 \right]^{-1}
 \ee
 %
-Bayes factor:
+
+\item
+Show that the Bayes factor is
 %
 \be
-{\cal B}_{10}(d) = {\rm exp}\left[\frac{\hat a^2}{2\sigma^2_{\hat a}}\right]
+\begin{aligned}
+{\cal B}_{10}(d) &= {\rm exp}\left[\frac{\hat a^2}{2\sigma^2_{\hat a}}\right]
 \left(\frac{\sqrt{2\pi}\sigma_{\hat a}}{a_{\rm max}}\right)
 \frac{1}{2}\left[
 {\rm erf}\left(\frac{a_{\rm max}-\hat a}{\sqrt{2}\sigma_{\hat a}}\right) +
 {\rm erf}\left(\frac{\hat a}{\sqrt{2}\sigma_{\hat a}}\right) 
 \right]
-\simeq {\rm exp}\left[\frac{\hat a^2}{2\sigma^2_{\hat a}}\right]
+\\
+&\simeq {\rm exp}\left[\frac{\hat a^2}{2\sigma^2_{\hat a}}\right]
 \left(\frac{\sqrt{2\pi}\sigma_{\hat a}}{a_{\rm max}}\right)
+\end{aligned}
 \ee
+%
+where the last approximate equality assumes that the data are informative.
 
-Maximum-likelihood ratio statistic:
+\item
+Show that the maximum-likelihood ratio statistic is
 %
 \be
 \Lambda_{\rm ML}(d) = {\rm exp}\left(\frac{\hat a^2}{2\sigma^2_{\hat a}}\right)
 \ee
 %
-Test statistic constructed from $\Lambda_{\rm ML}(d)$:
+
+\item
+Show that frequentist test statistic $\Lambda(d)$ constructed from $\Lambda_{\rm ML}(d)$ is
 %
 \be
 \Lambda(d) \equiv 2\ln \Lambda_{\rm ML}(d) = \frac{\hat a^2}{\sigma^2_{\hat a}} = \left(\frac{\sqrt{N}\bar d}{\sigma}\right)^2 \equiv \rho^2
 \ee
 %
-Sampling distributions for $\Lambda(d)$:
-\be
-p(\Lambda|{\cal M}_0) =\frac{1}{\sqrt{2\pi\Lambda}}e^{-\Lambda/2}
-\ee
+with sampling distributions
 %
-and
-%
-\be
-p(\Lambda|a,{\cal M}_1) =\frac{1}{\sqrt{2\pi\Lambda}}\frac{1}{2}\left[
+\begin{align}
+&p(\Lambda|{\cal M}_0) =\frac{1}{\sqrt{2\pi\Lambda}}e^{-\Lambda/2}
+\\
+&p(\Lambda|a,{\cal M}_1) =\frac{1}{\sqrt{2\pi\Lambda}}\frac{1}{2}\left[
 e^{-\frac{1}{2}(\sqrt{\Lambda}-\sqrt{\lambda})^2}
 +e^{-\frac{1}{2}(\sqrt{\Lambda}+\sqrt{\lambda})^2}
 \right]
-\ee
+\end{align}
 %
 where
 %
@@ -209,6 +228,53 @@ where
 \langle\rho\rangle^2=\frac{Na^2}{\sigma^2}
 \ee
 
+\een
+
+For the numerical simulations, take e.g.,
+%
+\be
+N=100\,,\quad \sigma=1\,,\quad  
+0\le a \le a_{\rm max}=1\,, 
+\quad a_0 = 0.1 = \text{true value}\,,
+\ee
+%
+but these values can be changed accordingly to consider
+stronger (or weaker) injections, etc.
+Calculate the following quantities:
+%
+\ben
+\item
+the value of the threshold $\Lambda_*$ corresponding to a
+false alarm probability $\alpha=0.1$.
+
+\item
+the observed value $\Lambda_{\rm obs}$ of the test statistic
+$\Lambda(d)$ for simulated data, and its corresponding
+$p$ value.
+
+\item
+the frequentist detection probability curve $\gamma(a)\equiv 1-\beta(a)$,
+and the value $a^{90\%, {\rm DP}}$ of $a$ needed for 90\% detection probability.
+
+\item
+the frequentist 95\% confidence interval 
+$[\hat a-\sigma_{\hat a},\hat a+\sigma_{\hat a}]$.
+
+\item
+the frequentist 90\% confidence level upper limit $a^{90\%, {\rm UL}}$.
+
+\item
+the Bayesian 95\% credible interval centered on the mode of 
+$p(a|d,{\cal M}_1)$.
+
+\item
+the Bayesian 90\%  credible upper limit $a^{90\%, {\rm UL}}$.
+
+\item
+the Bayes factor ${\cal B}_{10}(d)$, $2\ln {\cal B}_{10}(d)$, and
+the Laplace approximation of that quantity.
+
+\een
 
 \i {\em Rate estimate of stellar-mass binary black hole mergers:}
 \addcontentsline{toc}{subsection}
