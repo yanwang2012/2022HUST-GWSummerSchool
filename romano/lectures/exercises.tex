@@ -67,9 +67,152 @@ searches for stochastic gravitational-wave backgrounds.}
 
 \ben
 
+\i {\em Practical application of Bayes' theorem}
+\addcontentsline{toc}{subsection}
+{1 Practical application of Bayes' theorem}
+
+Suppose on your last visit to the doctor’s office you took a 
+test for some rare disease.  
+This type of disease occurs in only 1 out of 10,000 people, as
+determined by a random sample of the population.   
+The test that you took is rather effective in that it can 
+correctly identify the presence of the disease 95\% of the time, 
+but it gives false positives 1\% of the time.
+
+Suppose the test came up positive.  
+What is the probability that you have the disease?
+
+\i {\em Comparing frequentist and Bayesian analyses for a
+constant signal in white noise}
+\addcontentsline{toc}{subsection}
+{2 Comparing frequentist and Bayesian analyses for a
+constant signal in white noise}
+
+Consider a constant amplitude signal $a={\rm const}$ in 
+white Gaussian noise with variance 
+$\sigma^2$ described by the likelihood functions
+%
+\be
+p(d|{\cal M}_0) = \left(\frac{1}{\sqrt{2\pi}\sigma}\right)^N
+\exp\left[-\frac{1}{2\sigma^2}\sum_{i=1}^Nd_i^2\right]
+\ee
+%
+and
+%
+\be
+p(d|a,{\cal M}_1) = \left(\frac{1}{\sqrt{2\pi}\sigma}\right)^N
+\exp\left[-\frac{1}{2\sigma^2}\sum_{i=1}^N(d_i-a)^2\right]
+\ee
+%
+For the Bayesian analyses, use the following prior for $a$:
+%
+\be
+p(a|{\cal M}_1) = \frac{1}{a_{\rm max}}
+\ee
+
+Perform both frequentist and Bayesian analyses for the
+above signal and noise models, doing both analytic and
+numerical calculations of relevant quantities.
+
+\be
+N=100\,,\quad \sigma=1\,,\quad  
+0\le a \le a_{\rm max}\,, \quad a_0 =\text{true value}
+\ee
+
+Show that the ML estimator of $a$ is given by
+%
+\be
+\hat a\equiv a_{\rm ML}(d)=\frac{1}{N}\sum_{i=1}^Nd_i\equiv\bar d
+\ee
+
+Derive the following identity
+%
+\be
+\sum_{i=1}^N(d_i-a)^2 =\sum_i d_i^2 - N\hat a^2+N(a-\hat a)^2
+= N\left({\rm Var}[d] + (a-\hat a)^2\right)
+\ee
+%
+expressing the argument of the exponential in terms of $\hat a$.
+
+
+\be
+p(d|a,{\cal M}_1)=\left(\frac{1}{\sqrt{2\pi}\sigma}\right)^N
+{\rm exp}\left[-\frac{{\rm Var}[d]}{2\sigma^2_{\hat a}}\right]
+{\rm exp}\left[-\frac{(a-\hat a)^2}{2\sigma^2_{\hat a}}\right]
+\ee
+%
+Evidence
+%
+\be
+p(d|{\cal M}_1)=
+\frac{{\rm exp}\left[-\frac{{\rm Var}[d]}{2\sigma^2_{\hat a}}\right]
+\left[
+{\rm erf}\left(\frac{a_{\rm max}-\hat a}{\sqrt{2}\sigma_{\hat a}}\right) +
+{\rm erf}\left(\frac{\hat a}{\sqrt{2}\sigma_{\hat a}}\right) 
+\right]}
+{2a_{\rm max}\left(\sqrt{2\pi}\sigma\right)^{N-1}\sqrt{N}}
+\ee
+%
+Posterior:
+%
+\be
+p(a|d,{\cal M}_1)=\frac{1}{\sqrt{2\pi}\sigma_{\hat a}}{\rm exp}\left[-\frac{(a-\hat a)^2}{2\sigma^2_{\hat a}}\right]
+2\left[
+{\rm erf}\left(\frac{a_{\rm max}-\hat a}{\sqrt{2}\sigma_{\hat a}}\right) +
+{\rm erf}\left(\frac{\hat a}{\sqrt{2}\sigma_{\hat a}}\right) 
+\right]^{-1}
+\ee
+%
+Bayes factor:
+%
+\be
+{\cal B}_{10}(d) = {\rm exp}\left[\frac{\hat a^2}{2\sigma^2_{\hat a}}\right]
+\left(\frac{\sqrt{2\pi}\sigma_{\hat a}}{a_{\rm max}}\right)
+\frac{1}{2}\left[
+{\rm erf}\left(\frac{a_{\rm max}-\hat a}{\sqrt{2}\sigma_{\hat a}}\right) +
+{\rm erf}\left(\frac{\hat a}{\sqrt{2}\sigma_{\hat a}}\right) 
+\right]
+\simeq {\rm exp}\left[\frac{\hat a^2}{2\sigma^2_{\hat a}}\right]
+\left(\frac{\sqrt{2\pi}\sigma_{\hat a}}{a_{\rm max}}\right)
+\ee
+
+Maximum-likelihood ratio statistic:
+%
+\be
+\Lambda_{\rm ML}(d) = {\rm exp}\left(\frac{\hat a^2}{2\sigma^2_{\hat a}}\right)
+\ee
+%
+Test statistic constructed from $\Lambda_{\rm ML}(d)$:
+%
+\be
+\Lambda(d) \equiv 2\ln \Lambda_{\rm ML}(d) = \frac{\hat a^2}{\sigma^2_{\hat a}} = \left(\frac{\sqrt{N}\bar d}{\sigma}\right)^2 \equiv \rho^2
+\ee
+%
+Sampling distributions for $\Lambda(d)$:
+\be
+p(\Lambda|{\cal M}_0) =\frac{1}{\sqrt{2\pi\Lambda}}e^{-\Lambda/2}
+\ee
+%
+and
+%
+\be
+p(\Lambda|a,{\cal M}_1) =\frac{1}{\sqrt{2\pi\Lambda}}\frac{1}{2}\left[
+e^{-\frac{1}{2}(\sqrt{\Lambda}-\sqrt{\lambda})^2}
++e^{-\frac{1}{2}(\sqrt{\Lambda}+\sqrt{\lambda})^2}
+\right]
+\ee
+%
+where
+%
+\be
+\lambda=
+\langle\rho\rangle^2=\frac{Na^2}{\sigma^2}
+\ee
+
+
 \i {\em Rate estimate of stellar-mass binary black hole mergers:}
 \addcontentsline{toc}{subsection}
-{1 Rate estimate of stellar-mass binary black hole mergers}
+{3 Rate estimate of stellar-mass binary black hole mergers}
 
 Estimate the total rate (number of events per time) of 
 stellar-mass binary black hole mergers throughout the universe 
@@ -117,7 +260,7 @@ events per time) for sources out to redshift $z=10$.
 
 \i {\em Relating $S_h(f)$ and $\Omega_{\rm gw}(f)$:}
 \addcontentsline{toc}{subsection}
-{2 Relating $S_h(f)$ and $\Omega_{\rm gw}(f)$}
+{4 Relating $S_h(f)$ and $\Omega_{\rm gw}(f)$}
 
 Derive the relationship 
 \be
@@ -135,7 +278,7 @@ the metric perturbations $h_{ab}(t,\vec x)$.)
 
 \i {\em Cosmology and the ``Phinney formula" for astrophysical backgrounds:}
 \addcontentsline{toc}{subsection}
-{3 Cosmology and the ``Phinney formula" for astrophysical backgrounds}
+{5 Cosmology and the ``Phinney formula" for astrophysical backgrounds}
 
 (a) Using the Friedmann equation
 %
