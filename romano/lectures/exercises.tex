@@ -108,7 +108,7 @@ p(d|a,{\cal M}_1) = \left(\frac{1}{\sqrt{2\pi}\sigma}\right)^N
 %
 respectively.
 Asumme for the Bayesian analyses that the amplitude $a$ of 
-the signal is described by prior distribution
+the signal is described by the prior distribution
 %
 \be
 p(a|{\cal M}_1) = \frac{1}{a_{\rm max}}
@@ -124,26 +124,25 @@ For the analytic calculations:
 \ben
 
 \item
-Show that the ML estimator of $a$ is given by
+show that the ML estimator of $a$ is given by
 %
 \be
 \hat a\equiv a_{\rm ML}(d)=\frac{1}{N}\sum_{i=1}^Nd_i\equiv\bar d
 \ee
 
 \item
-Derive the following identity
+derive the following identity
 %
 \be
 \sum_{i=1}^N(d_i-a)^2 =\sum_i d_i^2 - N\hat a^2+N(a-\hat a)^2
 = N\left({\rm Var}[d] + (a-\hat a)^2\right)
 \ee
 %
-expressing the argument of the exponential in terms of $\hat a$.
 
 \item
-Show that the likelihood function $p(d|a,{\cal M}_1)$ can be
-rewritten in terms of $\hat a$ as:
-
+show that the likelihood function $p(d|a,{\cal M}_1)$ can be
+rewritten in terms of $\hat a$ as
+%
 \be
 p(d|a,{\cal M}_1)=\left(\frac{1}{\sqrt{2\pi}\sigma}\right)^N
 {\rm exp}\left[-\frac{{\rm Var}[d]}{2\sigma^2_{\hat a}}\right]
@@ -151,7 +150,8 @@ p(d|a,{\cal M}_1)=\left(\frac{1}{\sqrt{2\pi}\sigma}\right)^N
 \ee
 %
 
-\i Show that the evidence is given by
+\item
+show that the evidence is given by
 %
 \be
 p(d|{\cal M}_1)=
@@ -165,7 +165,7 @@ p(d|{\cal M}_1)=
 %
 
 \item
-Show that the posterior distribution for $a$ is given by
+show that the posterior distribution for $a$ is given by
 %
 \be
 p(a|d,{\cal M}_1)=\frac{1}{\sqrt{2\pi}\sigma_{\hat a}}{\rm exp}\left[-\frac{(a-\hat a)^2}{2\sigma^2_{\hat a}}\right]
@@ -177,10 +177,9 @@ p(a|d,{\cal M}_1)=\frac{1}{\sqrt{2\pi}\sigma_{\hat a}}{\rm exp}\left[-\frac{(a-\
 %
 
 \item
-Show that the Bayes factor is
+show that the Bayes factor is
 %
-\be
-\begin{aligned}
+\begin{align}
 {\cal B}_{10}(d) &= {\rm exp}\left[\frac{\hat a^2}{2\sigma^2_{\hat a}}\right]
 \left(\frac{\sqrt{2\pi}\sigma_{\hat a}}{a_{\rm max}}\right)
 \frac{1}{2}\left[
@@ -190,13 +189,13 @@ Show that the Bayes factor is
 \\
 &\simeq {\rm exp}\left[\frac{\hat a^2}{2\sigma^2_{\hat a}}\right]
 \left(\frac{\sqrt{2\pi}\sigma_{\hat a}}{a_{\rm max}}\right)
-\end{aligned}
-\ee
+\label{e:laplace}
+\end{align}
 %
-where the last approximate equality assumes that the data are informative.
+where the last approximate equality uses the Laplace approximation.
 
 \item
-Show that the maximum-likelihood ratio statistic is
+show that the maximum-likelihood ratio statistic is
 %
 \be
 \Lambda_{\rm ML}(d) = {\rm exp}\left(\frac{\hat a^2}{2\sigma^2_{\hat a}}\right)
@@ -204,13 +203,17 @@ Show that the maximum-likelihood ratio statistic is
 %
 
 \item
-Show that frequentist test statistic $\Lambda(d)$ constructed from $\Lambda_{\rm ML}(d)$ is
+show that frequentist test statistic $\Lambda(d)$ constructed from $\Lambda_{\rm ML}(d)$ is
 %
 \be
-\Lambda(d) \equiv 2\ln \Lambda_{\rm ML}(d) = \frac{\hat a^2}{\sigma^2_{\hat a}} = \left(\frac{\sqrt{N}\bar d}{\sigma}\right)^2 \equiv \rho^2
+\Lambda(d) \equiv 2\ln \Lambda_{\rm ML}(d) = \frac{\hat a^2}{\sigma^2_{\hat a}} 
+= \left(\frac{\sqrt{N}\bar d}{\sigma}\right)^2 \equiv \rho^2
 \ee
 %
-with sampling distributions
+which is just the squared SNR of the data.
+
+\item
+show that the sampling distributions of the test statistic are
 %
 \begin{align}
 &p(\Lambda|{\cal M}_0) =\frac{1}{\sqrt{2\pi\Lambda}}e^{-\Lambda/2}
@@ -227,6 +230,9 @@ where
 \lambda=
 \langle\rho\rangle^2=\frac{Na^2}{\sigma^2}
 \ee
+%
+is the non-centrality parameter for a non-central
+chi-square distribution with one degree of freedom.
 
 \een
 
@@ -238,9 +244,11 @@ N=100\,,\quad \sigma=1\,,\quad
 \quad a_0 = 0.1 = \text{true value}\,,
 \ee
 %
-but these values can be changed accordingly to consider
+but these values can be changed to consider
 stronger (or weaker) injections, etc.
-Calculate the following quantities:
+
+For a realization of simulated data, calculate 
+the following quantities, making plots when possible:
 %
 \ben
 \item
@@ -249,11 +257,10 @@ false alarm probability $\alpha=0.1$.
 
 \item
 the observed value $\Lambda_{\rm obs}$ of the test statistic
-$\Lambda(d)$ for simulated data, and its corresponding
-$p$ value.
+$\Lambda(d)$ and its corresponding $p$ value.
 
 \item
-the frequentist detection probability curve $\gamma(a)\equiv 1-\beta(a)$,
+the frequentist detection probability curve,
 and the value $a^{90\%, {\rm DP}}$ of $a$ needed for 90\% detection probability.
 
 \item
@@ -271,8 +278,9 @@ $p(a|d,{\cal M}_1)$.
 the Bayesian 90\%  credible upper limit $a^{90\%, {\rm UL}}$.
 
 \item
-the Bayes factor ${\cal B}_{10}(d)$, $2\ln {\cal B}_{10}(d)$, and
-the Laplace approximation of that quantity.
+the Bayes factor ${\cal B}_{10}(d)$, twice the log of the Bayes 
+factor $2\ln {\cal B}_{10}(d)$, and
+the Laplace approximation of that quantity, see Eq.~\eqref{e:laplace}.
 
 \een
 
