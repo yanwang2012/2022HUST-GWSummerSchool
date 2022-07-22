@@ -410,13 +410,9 @@ some set of average source parameters.
 If there is more than one type of source, one must sum
 the contributions of each source to $\Omega_{\rm gw}(f)$.)
 
-\een
-\end{document}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \i {\em Optimal filtering for the cross-correlation statistic:}
 \addcontentsline{toc}{subsection}
-{4 Optimal filtering for the cross-correlation statistic}
+{6 Optimal filtering for the cross-correlation statistic}
 
 Verify the form 
 %
@@ -450,7 +446,7 @@ statistic can be written in terms of this inner product.)
 \i {\em Maximum-likelihood estimators for single and multiple
 parameters:}
 \addcontentsline{toc}{subsection}
-{5 Maximum-likelihood estimators for single and multiple
+{7 Maximum-likelihood estimators for single and multiple
 parameters}
 
 (a) Show that the maximum-likelihood estimator $\hat a$ of 
@@ -495,31 +491,30 @@ to do the matrix inversion.
 
 \i {\em Timing-residual response for a 1-arm, 1-way detector:}
 \addcontentsline{toc}{subsection}
-{6 Timing-residual response for a 1-arm, 1-way detector}
+{8 Timing-residual response for a 1-arm, 1-way detector}
 
 Derive the timing residual reponse function
 %
 \be
-R^A(f,\hat n) = 
-\frac{1}{2}u^a u^b e^A_{ab}(\hat n)
+R^A(f,\hat k) = 
+\frac{1}{2}u^a u^b e^A_{ab}(\hat k)
 \frac{1}{i2\pi f}
-\frac{1}{1+\hat n\cdot \hat u}
-\left[1-e^{-\frac{i2\pi fL}{c}(1+\hat n\cdot\hat u)}\right]
+\frac{1}{1-\hat k\cdot \hat u}
+\left[1-e^{-\frac{i2\pi fL}{c}(1-\hat k\cdot\hat u)}\right]
 \ee
 %
 for a single-link (i.e., a one-arm, one-way detector like 
 that for pulsar timing).
 Here $\hat u$ is the direction of propagation of the
-electromagnetic pulse, and $\hat n$ is the direction to the 
-GW source (the direction of wave propagation is 
-$\hat k\equiv -\hat n$ and the direction to the pulsar is
-$\hat p\equiv -\hat u$).
+electromagnetic pulse (the direction to the pulsar
+would be $\hat p=-\hat u$), and $\hat k$ is the direction 
+of propagation of the GW.
 The origin of coordinates is taken to be at the position 
 of the detector.
 
 \i {\em Overlap function for colocated electric dipole antennae:}
 \addcontentsline{toc}{subsection}
-{7 Overlap function for colocated electric dipole antennae}
+{9 Overlap function for colocated electric dipole antennae}
 
 Show that the overlap function for a pair of (short)
 colocated electric dipole antennae pointing in directions 
@@ -538,13 +533,13 @@ for the case of an unpolarized, isotropic electromagnetic field.
 field can be taken to be constant over of the lengths of 
 the dipole antennae, 
 so that the reponse of antenna $I=1,2$ to the field is
-given by $r_I(t)=\hat u_I\cdot\vec E(t, \vec x_0)$, where
-$\vec x_0$ is the common location of the two antenna.)
+given by $r_I(t)=\hat u_I\cdot\vec E(t, \vec x=\vec 0)$, where
+$\vec x=\vec 0$ is the common location of the two antenna.)
  
 \i {\em Maximum-likelihood estimators for the standard 
 cross-correlation statistic:}
 \addcontentsline{toc}{subsection}
-{8 Maximum-likelihood estimators for the standard 
+{10 Maximum-likelihood estimators for the standard 
 cross-correlation statistic}
 
 \label{exer:MLestimators} 
@@ -602,7 +597,7 @@ d_{Ii} \left(C^{-1}\right)_{Ii,Jj} d_{Jj}\,.
 
 \i {\em Derivation of the maximum-likelihood ratio detection statistic:}
 \addcontentsline{toc}{subsection}
-{9 Derivation of the maximum-likelihood ratio detection statistic}
+{11 Derivation of the maximum-likelihood ratio detection statistic}
 
 Verify that twice the log of the maximum-likelihood
 ratio for the standard stochastic likelihood function
@@ -620,7 +615,7 @@ detectors, using the results of Exercise~\ref{exer:MLestimators}.)
 \i {\em Standard cross-correlation likelihood by marginalizing over 
 stochastic signal prior:}
 \addcontentsline{toc}{subsection}
-{10 Standard cross-correlation likelihood by marginalizing over 
+{12 Standard cross-correlation likelihood by marginalizing over 
 stochastic signal prior}
 
 Derive the standard form of the likelihood function
